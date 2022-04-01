@@ -1,20 +1,24 @@
 import React, { useState, useEffect, useReducer } from 'react';
 import CardContainer from './CardContainer.js';
+import Filters from './Filters.js';
 import axios from 'axios';
 import {v4 as uuid} from "uuid";
 
-//const axios = require('axios');
-//const BASE_URL = 'https://opentdb.com/api.php?amount=10';
 const BASE_URL = 'http://localhost/PokemonCompendium/process.php';
 const ROWS_PER_PAGE = 20;
 
+// When page first loads, the page will display all cards in database by default
 const default_param = {
   'cardCountUpdated': 0,
   'rowsPerPage': 20,
-  'string_url': "http://localhost/PokemonCompendium/process.php?card_set=mid"
+  'string_url': "http://localhost/PokemonCompendium/process.php"
 };
 
 function App() {
+  // This hook holds all crucial state information (page number, current card count, parameters to
+  // axios call) for this page
+  // Using useReducer() instead of useState() because state logic is more complicated and relies on
+  // other states
   const [state, dispatch] = useReducer(reducer, {
      page: 1,
      cardCount: 0,
@@ -30,11 +34,11 @@ function App() {
     }
   }
 
+  // This hook will hold the JSON object containing all card info in current page
   const [dataSource, setDataSource] = useState([]);
-  const [queryInfo, setQueryInfo] = useState({
-    'totalNumPages': 1,
-    'totalNumCards': 1
-  });
+  // This hook will hold information of current query (filters applied, number of total cards returned, 
+  // number of total pages returned)
+  const [queryInfo, setQueryInfo] = useState({});
 
   useEffect(() => {
     axios({
@@ -43,10 +47,29 @@ function App() {
       data: state.param
     })
     .then(function (response) {
-      console.log(JSON.parse(decodeURIComponent(response['data'])));
+      //console.log(JSON.parse(decodeURIComponent(response['data'])));
       setDataSource(JSON.parse(decodeURIComponent(response['data'])));
     })
   }, [state])
+
+
+  useEffect(() => {
+    axios({
+      method: "post",
+      url: 'http://localhost/PokemonCompendium/process_num_pages.php',
+      data: state.param
+    })
+    .then(function (response) {
+      let updated_response = JSON.parse(decodeURIComponent(response['data']));
+      //console.log(updated_response);
+      if (updated_response[1]) {
+        setQueryInfo({ filters: updated_response[1], totalNumPages: Math.ceil(updated_response[0] / ROWS_PER_PAGE), totalNumCards: updated_response[0] });
+      }
+      else {
+        setQueryInfo({ filters: '+ALL CARDS (DEFAULT)', totalNumPages: Math.ceil(updated_response[0] / ROWS_PER_PAGE), totalNumCards: updated_response[0] });
+      }
+    })
+  }, [])
 
   function nextPage() {
     dispatch({ type: 'nextPage' });
@@ -63,6 +86,13 @@ function App() {
   return (
     <>
       <h1>Welcome to the Gallery!</h1>
+      {/* Make into separate component (since one way communication) */}
+      <h2>Filters: { queryInfo.filters }</h2>
+      <h2>Total number of cards: {queryInfo.totalNumCards}</h2>
+      <h2>Total number of pages: {queryInfo.totalNumPages}</h2>
+      {/* ================================================================ */}
+
+      <Filters />
       <CardContainer dataSource={dataSource} />
       <section id="pagination_bar">
         <button id="previous_button" onClick={previousPage}>Previous Page</button>
