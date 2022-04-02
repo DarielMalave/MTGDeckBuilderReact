@@ -5,13 +5,14 @@ import axios from 'axios';
 import {v4 as uuid} from "uuid";
 
 const BASE_URL = 'http://localhost/PokemonCompendium/process.php';
+const CURRENT_URL = window.location.href;
 const ROWS_PER_PAGE = 20;
 
 // When page first loads, the page will display all cards in database by default
 const default_param = {
   'cardCountUpdated': 0,
   'rowsPerPage': 20,
-  'string_url': "http://localhost/PokemonCompendium/process.php"
+  'string_url': CURRENT_URL
 };
 
 function App() {
@@ -28,9 +29,9 @@ function App() {
   function reducer(state, action) {
     switch(action.type) {
       case 'nextPage':
-        return { page: state.page + 1, cardCount: state.cardCount + ROWS_PER_PAGE, param: {'cardCountUpdated': state.cardCount + ROWS_PER_PAGE, 'rowsPerPage': 20, 'string_url': "http://localhost/PokemonCompendium/process.php?card_set=mid"} }
+        return { page: state.page + 1, cardCount: state.cardCount + ROWS_PER_PAGE, param: {'cardCountUpdated': state.cardCount + ROWS_PER_PAGE, 'rowsPerPage': 20, 'string_url': CURRENT_URL } }
       case 'previousPage':
-        return { page: state.page - 1, cardCount: state.cardCount - ROWS_PER_PAGE, param: {'cardCountUpdated': state.cardCount - ROWS_PER_PAGE, 'rowsPerPage': 20, 'string_url': "http://localhost/PokemonCompendium/process.php?card_set=mid"} }
+        return { page: state.page - 1, cardCount: state.cardCount - ROWS_PER_PAGE, param: {'cardCountUpdated': state.cardCount - ROWS_PER_PAGE, 'rowsPerPage': 20, 'string_url': CURRENT_URL } }
     }
   }
 
