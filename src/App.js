@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useReducer } from 'react';
 import CardContainer from './CardContainer.js';
 import Filters from './Filters.js';
+import QueryInfo from './QueryInfo.js';
+import './styles/Reset.css';
+import './styles/App.css';
+import './styles/Gallery.css';
 import axios from 'axios';
 import {v4 as uuid} from "uuid";
 
@@ -48,8 +52,9 @@ function App() {
       data: state.param
     })
     .then(function (response) {
-      //console.log(JSON.parse(decodeURIComponent(response['data'])));
-      setDataSource(JSON.parse(decodeURIComponent(response['data'])));
+      let updated_response = JSON.parse(decodeURIComponent(response['data']));
+      console.log(updated_response);
+      setDataSource(updated_response);
     })
   }, [state])
 
@@ -62,7 +67,6 @@ function App() {
     })
     .then(function (response) {
       let updated_response = JSON.parse(decodeURIComponent(response['data']));
-      //console.log(updated_response);
       if (updated_response[1]) {
         setQueryInfo({ filters: updated_response[1], totalNumPages: Math.ceil(updated_response[0] / ROWS_PER_PAGE), totalNumCards: updated_response[0] });
       }
@@ -86,13 +90,7 @@ function App() {
 
   return (
     <>
-      <h1>Welcome to the Gallery!</h1>
-      {/* Make into separate component (since one way communication) */}
-      <h2>Filters: { queryInfo.filters }</h2>
-      <h2>Total number of cards: {queryInfo.totalNumCards}</h2>
-      <h2>Total number of pages: {queryInfo.totalNumPages}</h2>
-      {/* ================================================================ */}
-
+      <QueryInfo filters={ queryInfo.filters } totalNumCards={ queryInfo.totalNumCards } totalNumPages={ queryInfo.totalNumPages } />
       <Filters />
       <CardContainer dataSource={dataSource} />
       <section id="pagination_bar">

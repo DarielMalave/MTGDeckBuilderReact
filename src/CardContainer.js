@@ -7,7 +7,7 @@ function CardContainer({dataSource}) {
     return (
         <div id='card_container'>
             {
-            dataSource.map(card => {
+            dataSource.map( (card) => {
                 return <Card key={uuid()} cardData={card} />
             })
             }

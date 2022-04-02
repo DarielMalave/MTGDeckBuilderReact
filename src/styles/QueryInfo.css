@@ -1,0 +1,26 @@
+#filters {
+    width: 90%;
+    margin: 1rem auto;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+  
+#filters h2{
+    margin-right: 5px;
+}
+  
+#display_search_info {
+    width: 90%;
+    margin: 1rem auto;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+  
+#display_search_info h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}

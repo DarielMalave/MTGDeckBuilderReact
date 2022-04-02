@@ -7,3 +7,24 @@ img:hover {
     transform: translateY(-0.3em);
     cursor: pointer;
 }
+
+.lazy_load {
+    visibility: hidden;
+}
+/* https://codepen.io/brettdewoody/pen/mRPqVY */
+.fade_in {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+  
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    
+    to {
+      opacity: 1;
+    }
+}

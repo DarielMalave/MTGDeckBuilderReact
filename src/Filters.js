@@ -132,7 +132,10 @@ function Filters() {
                     }
                 </div>
             </div>
-            <button key={uuid()} onClick={resetPage}>Reset</button>
+
+            <div className="dropdown">
+                <button key={uuid()} onClick={resetPage} className="dropbtn">Reset</button>
+            </div>
         </div>
     );
 }
