@@ -52,89 +52,15 @@ body {
     cursor: pointer;
 }
 
+.icon {
+    font-size: 0.5rem;
+    fill: white;
+}
+
 .gallery {
     background-color: rgb(173, 97, 170);
 }
 
 .demo {
     background-color: rgb(228, 153, 56);
-}
-
-/* =========== all styles for the "welcome" section ============== */
-
-#welcome {
-    width: 90%;
-    height: 350px;
-    margin: 0 auto;
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-}
-
-.welcome_image {
-    width: 300px;
-    height: 300px;
-}
-
-.welcome_text {
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.welcome_subtext {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-}
-
-/* ============= all styles for the "About This Project" section ========== */
-
-#about {
-    width: 90%;
-    height: 400px;
-    margin: 0 auto;
-    margin-top: 2rem;
-    display: flex;
-}
-
-.about_image {
-    width: 300px;
-    height: 400px;
-}
-
-.about_header {
-    font-weight: bold;
-    font-size: 2.5rem;
-    margin-top: 1rem;
-}
-
-.about_text {
-    margin-top: 1rem;
-}
-
-/* ============= all styles for the "View Pokemon x" boxes */
-
-#box_items {
-    width: 90%;
-    height: 300px;
-    margin: 0 auto;
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.box {
-    background: rgb(95, 209, 95);
-    border: 5px solid black;
-    border-radius: 8px;
-    height: 200px;
-    width: 200px;
-}
-
-/* ================= styles for footer ================== */
-
-#footer {
-    background: rgb(225, 225, 225);
 }

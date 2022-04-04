@@ -1,0 +1,59 @@
+/* =========== all styles for the "welcome" section ============== */
+
+body {
+    margin-bottom: 2rem;
+}
+
+#welcome {
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.welcome_image {
+    width: 300px;
+    height: 300px;
+}
+
+.welcome_text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.welcome_subtext {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+/* ============= all styles for the "About This Project" section ========== */
+
+#about {
+    width: 90%;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+.about_image {
+    width: 300px;
+    height: 400px;
+}
+
+.about_header {
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+}
+
+.about_text {
+    margin-top: 1rem;
+}

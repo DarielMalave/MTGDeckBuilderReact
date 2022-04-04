@@ -1,4 +1,7 @@
 import React from 'react';
+import main from './images/main.svg';
+import gallery from './images/gallery.svg';
+import deck from './images/deck.svg';
 
 function NavBar() {
     return (
