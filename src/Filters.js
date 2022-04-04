@@ -19,7 +19,7 @@ const rarity_name = ['Common', 'Uncommon', 'Rare', 'Mythic'];
 
 function Filters() {
     function resetPage() {
-        window.location.assign(window.location.origin);
+        window.location.assign(window.location.origin + "/gallery");
     }
 
     function toggleFilter(filter) {

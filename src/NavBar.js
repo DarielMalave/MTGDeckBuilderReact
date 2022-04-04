@@ -2,7 +2,7 @@ import React from 'react';
 
 function NavBar() {
     return (
-        <div class="container">
+        <div className="container">
             <nav id="navbar">
                 <div><a href="/"><button className="logo">MTG Deck Builder</button></a></div>
                 <div>

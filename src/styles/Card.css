@@ -8,6 +8,10 @@ img:hover {
     cursor: pointer;
 }
 
+span {
+    font-weight: bold;
+}
+
 .lazy_load {
     visibility: hidden;
 }

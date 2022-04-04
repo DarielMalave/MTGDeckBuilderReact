@@ -77,6 +77,28 @@
     transition: box-shadow 0.25s, transform 0.25s;
 }
 
+.modal_button_delete {
+    background-color: #e2535a;
+    color: black;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    border: 3px solid black;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.modal_button:hover {
+    box-shadow: inset 0 0 100px 100px rgba(133, 223, 148, 0.884);
+    cursor: pointer;
+}
+
+.modal_button_delete:hover {
+    box-shadow: inset 0 0 100px 100px rgba(190, 211, 114, 0.884);
+    cursor: pointer;
+}
+
 /* The Close Button */
 #close {
     color: #aaaaaa;

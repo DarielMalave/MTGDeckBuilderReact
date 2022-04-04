@@ -7,86 +7,86 @@ https://www.w3schools.com/howto/howto_css_dropdown.asp
 */
 
 .dropbtn {
-    background-color: #e2535a;
-    color: black;
-    padding: 0.5rem;
-    font-size: 1rem;
-    margin-right: 0.5rem;
-    border: 3px solid black;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: box-shadow 0.25s, transform 0.25s;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content button {
-    color: black;
-    padding: 5px;
-    font-size: 1rem;
-    text-decoration: none;
-    /* background: none; */
-    border: none;
-    width: 100%;
-    text-align: left;
-    display: block;
-  }
-  
-  .active-button {
-    background-color:rgba(206, 252, 1, 0.884);
-  }
-  
-  .dropdown-content button:hover {
-    box-shadow: inset 0 0 100px 100px rgba(133, 223, 148, 0.884);
-    cursor: pointer;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:hover .dropbtn {
-    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-  }
-  
-  /* Displaying filters and search page results */
-  
-  #filters {
-    width: 90%;
-    margin: 1rem auto;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-  }
-  
-  #filters h2{
-    margin-right: 5px;
-  }
-  
-  #display_search_info {
-    width: 90%;
-    margin: 1rem auto;
-    margin-bottom: 0;
-    font-size: 1.5rem;
-  }
-  
-  #display_search_info h1 {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-  }
+  background-color: #e2535a;
+  color: black;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  border: 3px solid black;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 5px;
+  font-size: 1rem;
+  text-decoration: none;
+  /* background: none; */
+  border: none;
+  width: 100%;
+  text-align: left;
+  display: block;
+}
+
+.active-button {
+  background-color: rgba(206, 252, 1, 0.884);
+}
+
+.dropdown-content button:hover {
+  box-shadow: inset 0 0 100px 100px rgba(133, 223, 148, 0.884);
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+/* Displaying filters and search page results */
+
+#filters {
+  width: 90%;
+  margin: 1rem auto;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+#filters h2 {
+  margin-right: 5px;
+}
+
+#display_search_info {
+  width: 90%;
+  margin: 1rem auto;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+
+#display_search_info h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
