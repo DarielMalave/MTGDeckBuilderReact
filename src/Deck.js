@@ -127,7 +127,7 @@ function Deck() {
                     </div>
                 </div>
             </div>
-            <CardContainer dataSource={instantCards} />
+            <CardContainer dataSource={instantCards} deleteCard={"yes"} />
 
             <div className="title_con">
                 <h2>Artifact ({artifactCards.length})</h2>
@@ -146,7 +146,7 @@ function Deck() {
                     </div>
                 </div>
             </div>
-            <CardContainer dataSource={artifactCards} />
+            <CardContainer dataSource={artifactCards} deleteCard={"yes"} />
 
             <div className="title_con">
                 <h2>Enchantment ({enchantmentCards.length})</h2>
@@ -164,7 +164,7 @@ function Deck() {
                     </div>
                 </div>
             </div>
-            <CardContainer dataSource={enchantmentCards} />
+            <CardContainer dataSource={enchantmentCards} deleteCard={"yes"} />
 
             <div className="title_con">
                 <h2>Sorcery ({sorceryCards.length})</h2>
@@ -180,7 +180,7 @@ function Deck() {
                     </div>
                 </div>
             </div>
-            <CardContainer dataSource={sorceryCards} />
+            <CardContainer dataSource={sorceryCards} deleteCard={"yes"} />
 
             <div className="title_con">
                 <h2>Planeswalker ({planeswalkerCards.length})</h2>
@@ -200,7 +200,7 @@ function Deck() {
                     </div>
                 </div>
             </div>
-            <CardContainer dataSource={planeswalkerCards} />
+            <CardContainer dataSource={planeswalkerCards} deleteCard={"yes"} />
 
             <div className="title_con">
                 <h2>Land ({landCards.length})</h2>
@@ -221,7 +221,7 @@ function Deck() {
                     </div>
                 </div>
             </div>
-            <CardContainer dataSource={landCards} />
+            <CardContainer dataSource={landCards} deleteCard={"yes"} />
 
         </>);
 }
