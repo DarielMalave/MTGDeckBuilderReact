@@ -6,7 +6,7 @@ import './styles/Gallery.css';
 import axios from 'axios';
 import {v4 as uuid} from "uuid";
 
-const BASE_URL = 'http://localhost/PokemonCompendium/process.php';
+const BASE_URL = 'http://www.mtgdeckbuilder21.tech/';
 const CURRENT_URL = window.location.href;
 const ROWS_PER_PAGE = 20;
 
@@ -43,10 +43,11 @@ function Gallery() {
   // number of total pages returned)
   const [queryInfo, setQueryInfo] = useState({});
 
+  // default query to get first page of results
   useEffect(() => {
     axios({
       method: "post",
-      url: BASE_URL,
+      url: BASE_URL + "process.php",
       data: state.param
     })
     .then(function (response) {
@@ -60,7 +61,7 @@ function Gallery() {
   useEffect(() => {
     axios({
       method: "post",
-      url: 'http://localhost/PokemonCompendium/process_num_pages.php',
+      url: BASE_URL + "process_num_pages.php",
       data: state.param
     })
     .then(function (response) {
